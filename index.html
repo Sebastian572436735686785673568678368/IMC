@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Poetsen+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>Calculadora de IMC y Edad de Mascota</title>
+    <link rel="stylesheet" href="./assets/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/styles/estilos.css">
+</head>
+<body>
+    <header>
+            <h1>DESAFIO  CALCULAR IMC Y EDAD MASCOTA</h1>
+        </header>
+    <nav>
+        <a href="calculado.html">Calculadora de IMC</a>
+        <a href="calculadora.html">Edad de Mascota</a>
+    </nav>
+    <section>
+            <div class="container">
+                <h1>CALCULAR IMC</h1>
+                <p>¿Cuáles son los problemas para la salud asociados con la obesidad en perros?
+Incluso un ligero sobrepeso puede afectar negativamente la salud y la calidad de vida de tu perro. 
+Al igual que los seres humanos, los perros con sobrepeso sufren más presión en casi todos sus órganos.
+ Los órganos con presión a causa de sobrepeso pueden conllevar enfermedades e incluso la muerte.</p>
+<p>El sobrepeso y la obesidad en los perros es un factor de riesgo para las siguientes enfermedades graves:</p>
+<li>artritis</li>
+<li>diabetes</li>
+<li>dificultades respiratorias</li>
+<li>enfermedades respiratorias</li>
+<li>cáncer</li>
+<li>hipertensión</li>
+<li>lesiones en las articulaciones</li>
+<p>Además, los perros con sobrepeso pueden tener una esperanza de vida más corta. Por todos estos
+     motivos es importante saber si tu perro tiene sobrepeso, qué factores pueden haberlo causado
+      y cómo puedes ayudarle a perder peso y recobrar su salud.</p>
+<p>¿Cómo puedo saber si mi perro tiene sobrepeso?</p>
+<p>Hay varios modos de comprobar si tu perro tiene problemas de sobrepeso. Si no puedes notar las
+     costillas de tu perro cuando tocas su pecho, esta es una señal clara de que tiene sobrepeso u obesidad.</p>
+<p>También puedes utilizar la siguiente Escala de puntuación de la condición corporal o nuestra
+     calculadora de IMC (índice de masa corporal) de perros para comprobar si el peso de tu perro es adecuado.</p>
+<p>Tu veterinario también podrá decirte si tu perro padece sobrepeso, indicarte cuál es su peso
+     ideal y recomendarte un plan para perder peso que sea específico para sus necesidades.</p>
+        </div>
+        <div class="text-center">
+            <img src="./assets/img/img1.png" alt="Descripción de la imagen" class="img-fluid">
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function calcularIMC() {
+            var peso = parseFloat(document.getElementById('peso').value);
+            var altura = parseFloat(document.getElementById('altura').value);
+            var imc = peso / (altura * altura);
+            document.getElementById('resultadoIMC').innerHTML = "Tu IMC es: " + imc.toFixed(2);
+        }
+
+        function calcularEdadMascota() {
+            var edadHumana = parseInt(document.getElementById('edadHumana').value);
+            var edadMascota = 0;
+            if (edadHumana <= 2) {
+                edadMascota = edadHumana * 10.5;
+            } else {
+                edadMascota = 21 + ((edadHumana - 2) * 4);
+            }
+            document.getElementById('resultadoEdadMascota').innerHTML = "La edad de tu mascota es aproximadamente: " + edadMascota;
+        }
+    </script>
+</body>
+</html>
